@@ -1,0 +1,517 @@
+{
+  "appName": {
+    "message": "Akıllı Metin Asistanı",
+    "description": "Eklentinin adı"
+  },
+  "appDescription": {
+    "message": "Seçili metinleri yapay zeka ile iyileştiren ve prompt'lara dönüştüren güvenli tarayıcı eklentisi",
+    "description": "Eklentinin açıklaması"
+  },
+  
+  "popup_title": {
+    "message": "Ayarlar",
+    "description": "Popup başlığı"
+  },
+  "popup_close": {
+    "message": "Kapat",
+    "description": "Kapatma butonu"
+  },
+  
+  "tab_general": {
+    "message": "Genel",
+    "description": "Genel ayarlar sekmesi"
+  },
+  "tab_api": {
+    "message": "API Ayarları",
+    "description": "API ayarları sekmesi"
+  },
+  "tab_prompts": {
+    "message": "Promptlar",
+    "description": "Prompt şablonları sekmesi"
+  },
+  "tab_history": {
+    "message": "Geçmiş",
+    "description": "İşlem geçmişi sekmesi"
+  },
+  
+  "general_theme": {
+    "message": "Tema",
+    "description": "Tema ayarı etiketi"
+  },
+  "theme_light": {
+    "message": "Aydınlık",
+    "description": "Aydınlık tema"
+  },
+  "theme_dark": {
+    "message": "Karanlık",
+    "description": "Karanlık tema"
+  },
+  "general_usePageTitle": {
+    "message": "Sayfa başlığını bağlam olarak kullan",
+    "description": "Sayfa başlığı kullanım ayarı"
+  },
+  "general_language": {
+    "message": "Arayüz Dili",
+    "description": "Arayüz dili seçici etiketi"
+  },
+  
+  "api_title": {
+    "message": "API Ayarları",
+    "description": "API ayarları başlığı"
+  },
+  "api_infoDefault": {
+    "message": "Varsayılan: Pollinations AI (ÜCRETSIZ)",
+    "description": "Varsayılan AI bilgisi"
+  },
+  "api_infoDefaultDesc": {
+    "message": "Hiçbir ayar yapmadan kullanabilirsiniz! API key gerektirmez, tamamen ücretsiz.",
+    "description": "Varsayılan AI açıklaması"
+  },
+  "api_infoAlternatives": {
+    "message": "Daha güçlü alternatifler:",
+    "description": "Alternatif AI'lar başlığı"
+  },
+  "api_provider_default": {
+    "message": "Varsayılan (Pollinations AI - Ücretsiz, API Key Gerektirmez)",
+    "description": "Varsayılan sağlayıcı"
+  },
+  "api_provider_default_short": {
+    "message": "Pollinations AI (Ücretsiz)",
+    "description": "Varsayılan sağlayıcı kısa"
+  },
+  "api_provider_groq": {
+    "message": "Groq (Llama 3.3 70B - Kendi API Key)",
+    "description": "Groq sağlayıcı"
+  },
+  "api_provider_openai": {
+    "message": "OpenAI (GPT-3.5/GPT-4 - Kendi API Key)",
+    "description": "OpenAI sağlayıcı"
+  },
+  "api_provider_claude": {
+    "message": "Claude (Anthropic - Kendi API Key)",
+    "description": "Claude sağlayıcı"
+  },
+  "api_provider_gemini": {
+    "message": "Google Gemini (Kendi API Key)",
+    "description": "Gemini sağlayıcı"
+  },
+  "api_provider_cohere": {
+    "message": "Cohere (Kendi API Key)",
+    "description": "Cohere sağlayıcı"
+  },
+  "api_provider_custom": {
+    "message": "Özel API (Custom Endpoint)",
+    "description": "Özel API sağlayıcı"
+  },
+  "api_key_placeholder": {
+    "message": "API Anahtarı",
+    "description": "API anahtarı placeholder"
+  },
+  "api_endpoint_placeholder": {
+    "message": "API Endpoint URL (örn: https://api.example.com/v1/chat)",
+    "description": "API endpoint placeholder"
+  },
+  "api_model_placeholder": {
+    "message": "Model Adı (opsiyonel)",
+    "description": "Model adı placeholder"
+  },
+  "api_save": {
+    "message": "Kaydet",
+    "description": "Kaydet butonu"
+  },
+  "api_delete": {
+    "message": "Sil",
+    "description": "Sil butonu"
+  },
+  "api_saving": {
+    "message": "Kaydediliyor...",
+    "description": "Kaydetme durumu"
+  },
+  "api_success": {
+    "message": "✓ API anahtarı kaydedildi",
+    "description": "Başarı mesajı"
+  },
+  "api_deleted": {
+    "message": "✓ API anahtarı silindi",
+    "description": "Silme başarı mesajı"
+  },
+  "api_error": {
+    "message": "Hata",
+    "description": "Hata etiketi"
+  },
+  "api_error_providerRequired": {
+    "message": "Lütfen sağlayıcı ve API anahtarı girin",
+    "description": "Sağlayıcı gerekli hatası"
+  },
+  "api_error_endpointRequired": {
+    "message": "Lütfen API endpoint URL girin",
+    "description": "Endpoint gerekli hatası"
+  },
+  "api_error_selectProvider": {
+    "message": "Lütfen bir sağlayıcı seçin",
+    "description": "Sağlayıcı seçimi hatası"
+  },
+  "api_getKeyGroq": {
+    "message": "Buradan ücretsiz API key alın",
+    "description": "Groq API key alma linki"
+  },
+  "api_getKeyGemini": {
+    "message": "Buradan ücretsiz API key alın",
+    "description": "Gemini API key alma linki"
+  },
+  
+  "processing_title": {
+    "message": "Akıllı Metin Asistanı",
+    "description": "Processing popup başlığı"
+  },
+  "processing_activeProvider": {
+    "message": "Aktif",
+    "description": "Aktif sağlayıcı göstergesi",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Groq"
+      }
+    }
+  },
+  "processing_loading": {
+    "message": "Yükleniyor...",
+    "description": "Yükleme durumu"
+  },
+  "processing_selectedText": {
+    "message": "Seçili Metin",
+    "description": "Seçili metin etiketi"
+  },
+  "processing_characters": {
+    "message": "$COUNT$ karakter",
+    "description": "Karakter sayısı",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "processing_limitExceeded": {
+    "message": "⚠️ Limit aşıldı",
+    "description": "Limit aşıldı uyarısı"
+  },
+  "processing_expandAll": {
+    "message": "👁️ Tümünü Gör",
+    "description": "Tümünü göster butonu"
+  },
+  "processing_collapse": {
+    "message": "👁️ Küçült",
+    "description": "Küçült butonu"
+  },
+  "processing_ready": {
+    "message": "🤖 Yapay zeka hazır",
+    "description": "Hazır durumu"
+  },
+  "processing_working": {
+    "message": "🤖 Yapay zeka çalışıyor...",
+    "description": "Çalışma durumu"
+  },
+  
+  "action_improve": {
+    "message": "Metni İyileştir",
+    "description": "İyileştirme işlemi"
+  },
+  "action_toPrompt": {
+    "message": "Prompt Haline Getir",
+    "description": "Prompt oluşturma işlemi"
+  },
+  "action_summarize": {
+    "message": "Metin Özetle",
+    "description": "Özetleme işlemi"
+  },
+  
+  "style_label": {
+    "message": "İşlem Stili:",
+    "description": "İşlem stili etiketi"
+  },
+  "style_faithful": {
+    "message": "Metne Sadık Kal",
+    "description": "Sadık kalma stili"
+  },
+  "style_enhance": {
+    "message": "Yapay Zeka ile Geliştir",
+    "description": "Geliştirme stili"
+  },
+  
+  "language_label": {
+    "message": "Çıktı Dili:",
+    "description": "Çıktı dili etiketi"
+  },
+  "language_turkish": {
+    "message": "🇹🇷 Türkçe",
+    "description": "Türkçe dili"
+  },
+  "language_english": {
+    "message": "🇺🇸 English",
+    "description": "İngilizce dili"
+  },
+  "language_spanish": {
+    "message": "🇪🇸 Español",
+    "description": "İspanyolca dili"
+  },
+  "language_german": {
+    "message": "🇩🇪 Deutsch",
+    "description": "Almanca dili"
+  },
+  "language_french": {
+    "message": "🇫🇷 Français",
+    "description": "Fransızca dili"
+  },
+  
+  "button_process": {
+    "message": "🚀 İşle",
+    "description": "İşle butonu"
+  },
+  "button_viewPrompt": {
+    "message": "Prompt'ı Gör",
+    "description": "Prompt görüntüleme butonu tooltip"
+  },
+  "button_copy": {
+    "message": "📋 Kopyala",
+    "description": "Kopyala butonu"
+  },
+  "button_copied": {
+    "message": "✓ Kopyalandı!",
+    "description": "Kopyalandı durumu"
+  },
+  "button_retry": {
+    "message": "🔄 Tekrar Dene",
+    "description": "Tekrar dene butonu"
+  },
+  "button_edit": {
+    "message": "✏️ Düzenle",
+    "description": "Düzenle butonu"
+  },
+  "button_save": {
+    "message": "💾 Kaydet",
+    "description": "Kaydet butonu"
+  },
+  "button_reset": {
+    "message": "🔄 Varsayılana Dön",
+    "description": "Sıfırla butonu"
+  },
+  "button_cancel": {
+    "message": "İptal",
+    "description": "İptal butonu"
+  },
+  
+  "placeholder_instructions": {
+    "message": "Ek talimatlar (opsiyonel)",
+    "description": "Ek talimatlar placeholder"
+  },
+  
+  "error_textTooLong": {
+    "message": "Metin Çok Uzun",
+    "description": "Metin çok uzun hatası başlığı"
+  },
+  "error_textTooLongDesc": {
+    "message": "Seçili metin $COUNT$ karakter uzunluğunda. Ücretsiz AI için maksimum 5000 karakter kabul ediliyor.",
+    "description": "Metin çok uzun hatası açıklaması",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "7500"
+      }
+    }
+  },
+  "error_solution": {
+    "message": "🚀 Çözüm:",
+    "description": "Çözüm başlığı"
+  },
+  "error_solutionDesc": {
+    "message": "• API anahtarı ekleyerek sınırsız metin işleyin",
+    "description": "Çözüm açıklaması"
+  },
+  "error_alternative": {
+    "message": "💡 Alternatif:",
+    "description": "Alternatif başlığı"
+  },
+  "error_alternativeDesc": {
+    "message": "• Metni 5000 karakterden kısa tutun\n• Sadece önemli kısımları seçin",
+    "description": "Alternatif açıklaması"
+  },
+  "error_addApiKey": {
+    "message": "🔑 API Anahtarı Ekle",
+    "description": "API anahtarı ekleme butonu"
+  },
+  "error_apiOpening": {
+    "message": "🔑 API ayarları açılıyor...",
+    "description": "API ayarları açılma durumu"
+  },
+  "error_extensionReloaded": {
+    "message": "⚠️ Eklenti yeniden yüklendi.",
+    "description": "Eklenti yeniden yüklendi hatası"
+  },
+  "error_pleaseReload": {
+    "message": "Lütfen sayfayı yenileyin (F5)",
+    "description": "Sayfa yenileme talebi"
+  },
+  "error_connectionLost": {
+    "message": "⚠️ Eklenti bağlantısı koptu.",
+    "description": "Bağlantı koptu hatası"
+  },
+  
+  "history_title": {
+    "message": "İşlem Geçmişi",
+    "description": "Geçmiş başlığı"
+  },
+  "history_clear": {
+    "message": "🗑️ Tümünü Temizle",
+    "description": "Geçmişi temizle butonu"
+  },
+  "history_clearConfirm": {
+    "message": "Tüm işlem geçmişini silmek istediğinize emin misiniz? Bu işlem geri alınamaz!",
+    "description": "Geçmiş temizleme onayı"
+  },
+  "history_empty": {
+    "message": "Henüz işlem geçmişi yok",
+    "description": "Boş geçmiş mesajı"
+  },
+  "history_delete": {
+    "message": "❌ Sil",
+    "description": "Geçmiş öğesi silme butonu"
+  },
+  "history_deleteConfirm": {
+    "message": "Bu işlem kaydını silmek istediğinize emin misiniz?",
+    "description": "Geçmiş öğesi silme onayı"
+  },
+  "history_text": {
+    "message": "Metin:",
+    "description": "Metin etiketi"
+  },
+  "history_result": {
+    "message": "Sonuç:",
+    "description": "Sonuç etiketi"
+  },
+  "history_provider": {
+    "message": "AI: $PROVIDER$",
+    "description": "Sağlayıcı etiketi",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Groq"
+      }
+    }
+  },
+  "history_action_improve": {
+    "message": "🔧 Metin İyileştirme",
+    "description": "İyileştirme işlemi geçmiş"
+  },
+  "history_action_toPrompt": {
+    "message": "🎯 Prompt Oluşturma",
+    "description": "Prompt oluşturma işlemi geçmiş"
+  },
+  "history_action_summarize": {
+    "message": "📝 Metin Özeti",
+    "description": "Özetleme işlemi geçmiş"
+  },
+  "history_style_faithful": {
+    "message": "Sadık Kal",
+    "description": "Sadık kalma stili geçmiş"
+  },
+  "history_style_enhance": {
+    "message": "AI Geliştir",
+    "description": "Geliştirme stili geçmiş"
+  },
+  
+  "prompt_title": {
+    "message": "📜 Gönderilecek Prompt",
+    "description": "Prompt başlığı"
+  },
+  "prompt_info": {
+    "message": "ℹ️ AI'a gönderilen prompt şablonlarını buradan görüntüleyebilir ve düzenleyebilirsiniz",
+    "description": "Prompt bilgi mesajı"
+  },
+  "prompt_selector_label": {
+    "message": "Seçili Şablon:",
+    "description": "Şablon seçici etiketi"
+  },
+  "prompt_template_1": {
+    "message": "Şablon 1: Metni İyileştir + Metne Sadık Kal",
+    "description": "Şablon 1 adı"
+  },
+  "prompt_template_2": {
+    "message": "Şablon 2: Metni İyileştir + Yapay Zeka ile Geliştir",
+    "description": "Şablon 2 adı"
+  },
+  "prompt_template_3": {
+    "message": "Şablon 3: Prompt Haline Getir + Metne Sadık Kal",
+    "description": "Şablon 3 adı"
+  },
+  "prompt_template_4": {
+    "message": "Şablon 4: Prompt Haline Getir + Yapay Zeka ile Geliştir",
+    "description": "Şablon 4 adı"
+  },
+  "prompt_template_5": {
+    "message": "Şablon 5: Metin Özetle + Metne Sadık Kal",
+    "description": "Şablon 5 adı"
+  },
+  "prompt_template_6": {
+    "message": "Şablon 6: Metin Özetle + Yapay Zeka ile Geliştir",
+    "description": "Şablon 6 adı"
+  },
+  "prompt_placeholders": {
+    "message": "💡 Placeholder'lar: {Seçilen_Metin}, {Sayfa_Başlığı}, {Ek_Talimatlar}, {Hedef_Dil}",
+    "description": "Placeholder bilgisi"
+  },
+  "prompt_resetConfirm": {
+    "message": "Şablonu varsayılan haline döndürmek istediğinizden emin misiniz?",
+    "description": "Şablon sıfırlama onayı"
+  },
+  "prompt_saved": {
+    "message": "✓ Prompt kaydedildi",
+    "description": "Prompt kaydetme başarı mesajı"
+  },
+  "prompt_reset": {
+    "message": "✓ Varsayılan şablon geri yüklendi",
+    "description": "Şablon sıfırlama başarı mesajı"
+  },
+  
+  "provider_default": {
+    "message": "Varsayılan AI (Pollinations)",
+    "description": "Varsayılan sağlayıcı adı"
+  },
+  "provider_groq": {
+    "message": "Groq",
+    "description": "Groq sağlayıcı adı"
+  },
+  "provider_openai": {
+    "message": "OpenAI",
+    "description": "OpenAI sağlayıcı adı"
+  },
+  "provider_claude": {
+    "message": "Claude",
+    "description": "Claude sağlayıcı adı"
+  },
+  "provider_gemini": {
+    "message": "Gemini",
+    "description": "Gemini sağlayıcı adı"
+  },
+  "provider_cohere": {
+    "message": "Cohere",
+    "description": "Cohere sağlayıcı adı"
+  },
+  "provider_custom": {
+    "message": "Özel API",
+    "description": "Özel API sağlayıcı adı"
+  },
+  
+  "selection_button_title": {
+    "message": "Akıllı Metin Asistanı",
+    "description": "Seçim butonu tooltip"
+  },
+  "selection_button_aria": {
+    "message": "Metin işleme için Akıllı Metin Asistanını aç",
+    "description": "Seçim butonu aria-label"
+  },
+  "selection_button_close": {
+    "message": "Kapat",
+    "description": "Seçim butonu kapatma tooltip"
+  }
+}

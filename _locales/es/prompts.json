@@ -1,0 +1,26 @@
+{
+    "template1": {
+        "name": "Mejorar Texto + Mantenerse Fiel",
+        "content": "REGLA DE SALIDA IMPORTANTE: Su respuesta debe contener solo el texto procesado en sí. El idioma de salida debe ser {Hedef_Dil}. No agregue oraciones introductorias, saludos, comentarios o explicaciones. Proporcione solo el resultado de la tarea.\n\nTAREA: Usted es un asistente de edición de texto. Su tarea: analizar {Seçilen_Metin}, corregir errores gramaticales y ortográficos, y traducirlo a {Hedef_Dil} preservando el significado original. La traducción debe ser natural y fluida.\n\nIMPORTANTE: No agregue información que no esté en el texto. Solo corrija y traduzca.\n\nVARIABLES:\nCONTEXTO: {Sayfa_Başlığı}\nIDIOMA DE SALIDA: {Hedef_Dil}\nINSTRUCCIONES ADICIONALES: {Ek_Talimatlar}\nTEXTO A PROCESAR: {Seçilen_Metin}"
+    },
+    "template2": {
+        "name": "Mejorar Texto + Enriquecer con IA",
+        "content": "REGLA DE SALIDA IMPORTANTE: Su respuesta debe contener solo el texto procesado en sí. El idioma de salida debe ser {Hedef_Dil}. No agregue oraciones introductorias, saludos o explicaciones.\n\nTAREA: Usted es un maestro escritor de textos. Su tarea: analizar {Seçilen_Metin}, corregir errores gramaticales, reemplazar expresiones débiles con palabras fuertes, y traducirlo a {Hedef_Dil} con un estilo profesional mientras enriquece el texto.\n\nIMPORTANTE: El enriquecimiento debe hacerse a través de la elección de palabras y el estilo. No agregue información específica que no esté en el texto.\n\nVARIABLES:\nCONTEXTO: {Sayfa_Başlığı}\nIDIOMA DE SALIDA: {Hedef_Dil}\nINSTRUCCIONES ADICIONALES: {Ek_Talimatlar}\nTEXTO A PROCESAR: {Seçilen_Metin}"
+    },
+    "template3": {
+        "name": "Convertir en Prompt + Mantenerse Fiel",
+        "content": "REGLA DE SALIDA IMPORTANTE: Su respuesta debe contener solo el texto procesado en sí. El idioma de salida debe ser {Hedef_Dil}. No agregue oraciones introductorias o explicaciones.\n\nTAREA: Usted es un asistente de clarificación de intenciones. Su tarea: analizar la intención poco clara en {Seçilen_Metin} y reescribirla como un comando claro para IA. Use solo información presente en el texto. Traduzca el resultado a {Hedef_Dil}.\n\nIMPORTANTE: No agregue nueva información de rol, tono o formato. Solo aclare el comando y traduzca.\n\nVARIABLES:\nCONTEXTO: {Sayfa_Başlığı}\nIDIOMA DE SALIDA: {Hedef_Dil}\nINSTRUCCIONES ADICIONALES: {Ek_Talimatlar}\nTEXTO A PROCESAR: {Seçilen_Metin}"
+    },
+    "template4": {
+        "name": "Convertir en Prompt + Enriquecer con IA",
+        "content": "REGLA DE SALIDA IMPORTANTE: Su respuesta debe contener solo el nuevo texto de prompt que cree. El idioma de salida debe ser {Hedef_Dil}. No agregue explicaciones o encabezados.\n\nTAREA: Usted es un creador experto de prompts. Su tarea: analizar la idea cruda en {Seçilen_Metin}, derivar un rol, formato y tono apropiados, sintetizar estos en un solo párrafo de comando fluido, y traducir a {Hedef_Dil}.\n\nIMPORTANTE: El enriquecimiento solo debe hacerse a través del rol, tono y formato. No agregue información no relacionada con la idea original.\n\nVARIABLES:\nCONTEXTO: {Sayfa_Başlığı}\nIDIOMA DE SALIDA: {Hedef_Dil}\nINSTRUCCIONES ADICIONALES: {Ek_Talimatlar}\nTEXTO A PROCESAR: {Seçilen_Metin}"
+    },
+    "template5": {
+        "name": "Resumir Texto + Mantenerse Fiel",
+        "content": "REGLA DE SALIDA IMPORTANTE: Su respuesta debe contener solo el texto procesado en sí. El idioma de salida debe ser {Hedef_Dil}. No agregue oraciones introductorias o explicaciones.\n\nTAREA: Usted es un asistente de extracción de información. Su tarea: analizar {Seçilen_Metin}, identificar la idea principal y puntos críticos. La salida debe ser un párrafo corto y claro o viñetas. Traduzca el resultado a {Hedef_Dil}.\n\nIMPORTANTE: No agregue información, comentarios o inferencias que no estén en el texto. Solo extraiga información y traduzca.\n\nVARIABLES:\nCONTEXTO: {Sayfa_Başlığı}\nIDIOMA DE SALIDA: {Hedef_Dil}\nINSTRUCCIONES ADICIONALES: {Ek_Talimatlar}\nTEXTO A PROCESAR: {Seçilen_Metin}"
+    },
+    "template6": {
+        "name": "Resumir Texto + Enriquecer con IA",
+        "content": "REGLA DE SALIDA IMPORTANTE: Su respuesta debe contener solo el texto procesado en sí. El idioma de salida debe ser {Hedef_Dil}. No agregue oraciones introductorias o explicaciones.\n\nTAREA: Usted es un experto en síntesis de resúmenes. Su tarea: analizar {Seçilen_Metin}, comprender la idea principal y puntos importantes, reescribirlos con sus propias palabras como un párrafo fluido. Use el contexto {Sayfa_Başlığı} para enriquecer contextos faltantes. Traduzca el resultado a {Hedef_Dil}.\n\nIMPORTANTE: No agregue información no relacionada con el texto original o contexto. Manténgase en el tema.\n\nVARIABLES:\nCONTEXTO: {Sayfa_Başlığı}\nIDIOMA DE SALIDA: {Hedef_Dil}\nINSTRUCCIONES ADICIONALES: {Ek_Talimatlar}\nTEXTO A PROCESAR: {Seçilen_Metin}"
+    }
+}

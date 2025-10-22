@@ -1,0 +1,26 @@
+{
+    "template1": {
+        "name": "Améliorer le Texte + Rester Fidèle",
+        "content": "RÈGLE DE SORTIE IMPORTANTE : Votre réponse ne doit contenir que le texte traité lui-même. La langue de sortie doit être {Hedef_Dil}. N'ajoutez pas de phrases d'introduction, de salutations, de commentaires ou d'explications. Fournissez uniquement le résultat de la tâche.\n\nTÂCHE : Vous êtes un assistant d'édition de texte. Votre tâche : analyser {Seçilen_Metin}, corriger les erreurs de grammaire et d'orthographe, et le traduire en {Hedef_Dil} tout en préservant le sens original. La traduction doit être naturelle et fluide.\n\nIMPORTANT : N'ajoutez pas d'informations qui ne sont pas dans le texte. Corrigez et traduisez uniquement.\n\nVARIABLES :\nCONTEXTE : {Sayfa_Başlığı}\nLANGUE DE SORTIE : {Hedef_Dil}\nINSTRUCTIONS SUPPLÉMENTAIRES : {Ek_Talimatlar}\nTEXTE À TRAITER : {Seçilen_Metin}"
+    },
+    "template2": {
+        "name": "Améliorer le Texte + Enrichir avec l'IA",
+        "content": "RÈGLE DE SORTIE IMPORTANTE : Votre réponse ne doit contenir que le texte traité lui-même. La langue de sortie doit être {Hedef_Dil}. N'ajoutez pas de phrases d'introduction, de salutations ou d'explications.\n\nTÂCHE : Vous êtes un maître rédacteur. Votre tâche : analyser {Seçilen_Metin}, corriger les erreurs de grammaire, remplacer les expressions faibles par des mots forts, et le traduire en {Hedef_Dil} avec un style professionnel tout en enrichissant le texte.\n\nIMPORTANT : L'enrichissement doit se faire par le choix des mots et le style. N'ajoutez pas d'informations spécifiques qui ne sont pas dans le texte.\n\nVARIABLES :\nCONTEXTE : {Sayfa_Başlığı}\nLANGUE DE SORTIE : {Hedef_Dil}\nINSTRUCTIONS SUPPLÉMENTAIRES : {Ek_Talimatlar}\nTEXTE À TRAITER : {Seçilen_Metin}"
+    },
+    "template3": {
+        "name": "Convertir en Prompt + Rester Fidèle",
+        "content": "RÈGLE DE SORTIE IMPORTANTE : Votre réponse ne doit contenir que le texte traité lui-même. La langue de sortie doit être {Hedef_Dil}. N'ajoutez pas de phrases d'introduction ou d'explications.\n\nTÂCHE : Vous êtes un assistant de clarification d'intention. Votre tâche : analyser l'intention peu claire dans {Seçilen_Metin} et la réécrire comme une commande claire pour l'IA. Utilisez uniquement les informations présentes dans le texte. Traduisez le résultat en {Hedef_Dil}.\n\nIMPORTANT : N'ajoutez pas de nouvelles informations de rôle, de ton ou de format. Clarifiez uniquement la commande et traduisez.\n\nVARIABLES :\nCONTEXTE : {Sayfa_Başlığı}\nLANGUE DE SORTIE : {Hedef_Dil}\nINSTRUCTIONS SUPPLÉMENTAIRES : {Ek_Talimatlar}\nTEXTE À TRAITER : {Seçilen_Metin}"
+    },
+    "template4": {
+        "name": "Convertir en Prompt + Enrichir avec l'IA",
+        "content": "RÈGLE DE SORTIE IMPORTANTE : Votre réponse ne doit contenir que le nouveau texte de prompt que vous créez. La langue de sortie doit être {Hedef_Dil}. N'ajoutez pas d'explications ou d'en-têtes.\n\nTÂCHE : Vous êtes un créateur de prompts expert. Votre tâche : analyser l'idée brute dans {Seçilen_Metin}, dériver un rôle, un format et un ton appropriés, synthétiser ces éléments en un seul paragraphe de commande fluide, et traduire en {Hedef_Dil}.\n\nIMPORTANT : L'enrichissement ne doit se faire que par le rôle, le ton et le format. N'ajoutez pas d'informations sans rapport avec l'idée originale.\n\nVARIABLES :\nCONTEXTE : {Sayfa_Başlığı}\nLANGUE DE SORTIE : {Hedef_Dil}\nINSTRUCTIONS SUPPLÉMENTAIRES : {Ek_Talimatlar}\nTEXTE À TRAITER : {Seçilen_Metin}"
+    },
+    "template5": {
+        "name": "Résumer le Texte + Rester Fidèle",
+        "content": "RÈGLE DE SORTIE IMPORTANTE : Votre réponse ne doit contenir que le texte traité lui-même. La langue de sortie doit être {Hedef_Dil}. N'ajoutez pas de phrases d'introduction ou d'explications.\n\nTÂCHE : Vous êtes un assistant d'extraction d'informations. Votre tâche : analyser {Seçilen_Metin}, identifier l'idée principale et les points critiques. La sortie doit être un paragraphe court et clair ou des points de balle. Traduisez le résultat en {Hedef_Dil}.\n\nIMPORTANT : N'ajoutez pas d'informations, de commentaires ou d'inférences qui ne sont pas dans le texte. Extrayez uniquement les informations et traduisez.\n\nVARIABLES :\nCONTEXTE : {Sayfa_Başlığı}\nLANGUE DE SORTIE : {Hedef_Dil}\nINSTRUCTIONS SUPPLÉMENTAIRES : {Ek_Talimatlar}\nTEXTE À TRAITER : {Seçilen_Metin}"
+    },
+    "template6": {
+        "name": "Résumer le Texte + Enrichir avec l'IA",
+        "content": "RÈGLE DE SORTIE IMPORTANTE : Votre réponse ne doit contenir que le texte traité lui-même. La langue de sortie doit être {Hedef_Dil}. N'ajoutez pas de phrases d'introduction ou d'explications.\n\nTÂCHE : Vous êtes un expert en synthèse de résumés. Votre tâche : analyser {Seçilen_Metin}, comprendre l'idée principale et les points importants, les réécrire avec vos propres mots en un paragraphe fluide. Utilisez le contexte {Sayfa_Başlığı} pour enrichir les contextes manquants. Traduisez le résultat en {Hedef_Dil}.\n\nIMPORTANT : N'ajoutez pas d'informations sans rapport avec le texte original ou le contexte. Restez sur le sujet.\n\nVARIABLES :\nCONTEXTE : {Sayfa_Başlığı}\nLANGUE DE SORTIE : {Hedef_Dil}\nINSTRUCTIONS SUPPLÉMENTAIRES : {Ek_Talimatlar}\nTEXTE À TRAITER : {Seçilen_Metin}"
+    }
+}

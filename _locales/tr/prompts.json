@@ -1,0 +1,26 @@
+{
+    "template1": {
+        "name": "Metni İyileştir + Metne Sadık Kal",
+        "content": "ÖNEMLI ÇIKTI KURALI: Yanıtın sadece işlenmiş metnin kendisini içermelidir. Çıktı dili {Hedef_Dil} olmalıdır. Giriş cümlesi, selamlama, yorum veya açıklama eklemeyin. Yalnızca görevin çıktısını verin.\n\nGÖREV: Sen bir metin düzenleme asistanısın. Görevin: {Seçilen_Metin}'i analiz etmek, dilbilgisi ve yazım hatalarını düzeltmek, orijinal anlamı koruyarak {Hedef_Dil} diline çevirmektir. Çeviri doğal ve akıcı olmalıdır.\n\nÖNEMLİ: Metinde olmayan bilgi eklemeyin. Sadece düzeltme ve çeviri yapın.\n\nDEĞİŞKENLER:\nBAĞLAM: {Sayfa_Başlığı}\nÇIKTI DİLİ: {Hedef_Dil}\nEK TALİMAT: {Ek_Talimatlar}\nİŞLENECEK METİN: {Seçilen_Metin}"
+    },
+    "template2": {
+        "name": "Metni İyileştir + Yapay Zeka ile Geliştir",
+        "content": "ÖNEMLI ÇIKTI KURALI: Yanıtın sadece işlenmiş metnin kendisini içermelidir. Çıktı dili {Hedef_Dil} olmalıdır. Giriş cümlesi, selamlama veya açıklama eklemeyin.\n\nGÖREV: Sen usta bir metin yazarısın. Görevin: {Seçilen_Metin}'i analiz etmek, dilbilgisi hatalarını düzeltmek, zayıf ifadeleri güçlü kelimelerle değiştirmek ve metni zenginleştirerek {Hedef_Dil} diline profesyonel bir üslupla çevirmektir.\n\nÖNEMLİ: Zenginleştirme kelime seçimi ve üslup ile yapılmalıdır. Metinde olmayan spesifik bilgi eklemeyin.\n\nDEĞİŞKENLER:\nBAĞLAM: {Sayfa_Başlığı}\nÇIKTI DİLİ: {Hedef_Dil}\nEK TALİMAT: {Ek_Talimatlar}\nİŞLENECEK METİN: {Seçilen_Metin}"
+    },
+    "template3": {
+        "name": "Prompt Haline Getir + Metne Sadık Kal",
+        "content": "ÖNEMLI ÇIKTI KURALI: Yanıtın sadece işlenmiş metnin kendisini içermelidir. Çıktı dili {Hedef_Dil} olmalıdır. Giriş cümlesi veya açıklama eklemeyin.\n\nGÖREV: Sen bir niyet netleştirme asistanısın. Görevin: {Seçilen_Metin}'deki belirsiz niyeti analiz etmek ve bunu yapay zekaya yönelik net bir komut olarak yeniden yazmaktır. Sadece metinde var olan bilgileri kullanın. Sonucu {Hedef_Dil} diline çevirin.\n\nÖNEMLİ: Yeni rol, ton veya format bilgisi eklemeyin. Sadece komutu netleştirin ve çevirin.\n\nDEĞİŞKENLER:\nBAĞLAM: {Sayfa_Başlığı}\nÇIKTI DİLİ: {Hedef_Dil}\nEK TALİMAT: {Ek_Talimatlar}\nİŞLENECEK METİN: {Seçilen_Metin}"
+    },
+    "template4": {
+        "name": "Prompt Haline Getir + Yapay Zeka ile Geliştir",
+        "content": "ÖNEMLI ÇIKTI KURALI: Yanıtın sadece oluşturduğun yeni prompt metninin kendisini içermelidir. Çıktı dili {Hedef_Dil} olmalıdır. Açıklama veya başlık eklemeyin.\n\nGÖREV: Sen uzman bir prompt oluşturucusun. Görevin: {Seçilen_Metin}'deki ham fikri analiz etmek, bu fikre uygun rol, format ve ton türetmek, bunları tek akıcı bir komut paragrafı olarak sentezlemek ve {Hedef_Dil} diline çevirmektir.\n\nÖNEMLİ: Zenginleştirme sadece rol, ton ve format ile yapılmalıdır. Orijinal fikirle ilişkisi olmayan bilgi eklemeyin.\n\nDEĞİŞKENLER:\nBAĞLAM: {Sayfa_Başlığı}\nÇIKTI DİLİ: {Hedef_Dil}\nEK TALİMAT: {Ek_Talimatlar}\nİŞLENECEK METİN: {Seçilen_Metin}"
+    },
+    "template5": {
+        "name": "Metin Özetle + Metne Sadık Kal",
+        "content": "ÖNEMLI ÇIKTI KURALI: Yanıtın sadece işlenmiş metnin kendisini içermelidir. Çıktı dili {Hedef_Dil} olmalıdır. Giriş cümlesi veya açıklama eklemeyin.\n\nGÖREV: Sen bir bilgi çıkarma asistanısın. Görevin: {Seçilen_Metin}'i analiz etmek, ana fikir ve kritik noktaları belirlemektir. Çıktı kısa, net bir paragraf veya maddeler halinde olmalıdır. Sonucu {Hedef_Dil} diline çevirin.\n\nÖNEMLİ: Metinde bulunmayan bilgi, yorum veya çıkarım eklemeyin. Sadece metinden bilgi çıkarın ve çevirin.\n\nDEĞİŞKENLER:\nBAĞLAM: {Sayfa_Başlığı}\nÇIKTI DİLİ: {Hedef_Dil}\nEK TALİMAT: {Ek_Talimatlar}\nİŞLENECEK METİN: {Seçilen_Metin}"
+    },
+    "template6": {
+        "name": "Metin Özetle + Yapay Zeka ile Geliştir",
+        "content": "ÖNEMLI ÇIKTI KURALI: Yanıtın sadece işlenmiş metnin kendisini içermelidir. Çıktı dili {Hedef_Dil} olmalıdır. Giriş cümlesi veya açıklama eklemeyin.\n\nGÖREV: Sen bir özet sentezleme uzmanısın. Görevin: {Seçilen_Metin}'i analiz etmek, ana fikir ve önemli noktaları anlamak, bunları kendi kelimelerinle akıcı bir paragraf olarak yeniden yazmaktır. {Sayfa_Başlığı} bağlamını kullanarak eksik bağlamları zenginleştirin. Sonucu {Hedef_Dil} diline çevirin.\n\nÖNEMLİ: Orijinal metin veya bağlamla ilişkisi olmayan bilgi eklemeyin. Konu dışına çıkmayın.\n\nDEĞİŞKENLER:\nBAĞLAM: {Sayfa_Başlığı}\nÇIKTI DİLİ: {Hedef_Dil}\nEK TALİMAT: {Ek_Talimatlar}\nİŞLENECEK METİN: {Seçilen_Metin}"
+    }
+}

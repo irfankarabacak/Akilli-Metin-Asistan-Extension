@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akıllı Metin Asistanı - Ayarlar</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="loading-theme">
+  <div class="container">
+    <div class="popup-header-row">
+      <h1 data-i18n="popup_title">⚙️ Ayarlar</h1>
+      <button class="close-popup-btn" id="close-popup" data-i18n-title="popup_close">✕</button>
+    </div>
+    
+    <div class="tabs">
+      <button class="tab active" data-tab="general" data-i18n="tab_general">Genel</button>
+      <button class="tab" data-tab="api" data-i18n="tab_api">API Ayarları</button>
+      <button class="tab" data-tab="prompts" data-i18n="tab_prompts">Promptlar</button>
+      <button class="tab" data-tab="history" data-i18n="tab_history">Geçmiş</button>
+    </div>
+    
+    <div class="tab-content active" id="general-tab">
+      <h3 data-i18n="tab_general">Genel Ayarlar</h3>
+      
+      <div class="settings-group">
+        <label data-i18n="general_theme">🎨 Tema</label>
+        <div class="theme-toggle">
+          <button class="theme-btn active" data-theme="light" id="light-theme-btn">
+            <span>☀️</span>
+            <span data-i18n="theme_light">Aydınlık</span>
+          </button>
+          <button class="theme-btn" data-theme="dark" id="dark-theme-btn">
+            <span>🌙</span>
+            <span data-i18n="theme_dark">Karanlık</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="settings-group">
+        <label>
+          <input type="checkbox" id="use-page-title">
+          <span data-i18n="general_usePageTitle">Sayfa başlığını bağlam olarak kullan</span>
+        </label>
+      </div>
+      
+      <div class="settings-group">
+        <label data-i18n="general_language">Arayüz Dili</label>
+        <select id="ui-language">
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="en">🇺🇸 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="fr">🇫🇷 Français</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="api-tab">
+      <h3 data-i18n="api_title">API Ayarları</h3>
+      <div class="info-success">
+        ✨ <strong data-i18n="api_infoDefault">Varsayılan: Pollinations AI (ÜCRETSIZ)</strong><br>
+        <small data-i18n="api_infoDefaultDesc">Hiçbir ayar yapmadan kullanabilirsiniz! API key gerektirmez, tamamen ücretsiz.</small><br><br>
+        <strong data-i18n="api_infoAlternatives">Daha güçlü alternatifler:</strong><br>
+        ⚡ <strong>Groq (Llama 3.3 70B)</strong>: <a href="https://console.groq.com/keys" target="_blank" data-i18n="api_getKeyGroq">Buradan ücretsiz API key alın</a><br>
+        🌟 <strong>Google Gemini</strong>: <a href="https://makersuite.google.com/app/apikey" target="_blank" data-i18n="api_getKeyGemini">Buradan ücretsiz API key alın</a><br>
+      </div>
+      
+      <select id="api-provider">
+        <option value="" data-i18n="api_provider_default">Varsayılan (Pollinations AI - Ücretsiz)</option>
+        <option value="groq" data-i18n="api_provider_groq">Groq (Llama 3.3 70B - Kendi API Key)</option>
+        <option value="openai" data-i18n="api_provider_openai">OpenAI (GPT-3.5/GPT-4 - Kendi API Key)</option>
+        <option value="claude" data-i18n="api_provider_claude">Claude (Anthropic - Kendi API Key)</option>
+        <option value="gemini" data-i18n="api_provider_gemini">Google Gemini (Kendi API Key)</option>
+        <option value="cohere" data-i18n="api_provider_cohere">Cohere (Kendi API Key)</option>
+        <option value="custom" data-i18n="api_provider_custom">Özel API (Custom Endpoint)</option>
+      </select>
+      
+      <div id="custom-endpoint-container" style="display: none;">
+        <input type="text" id="custom-endpoint" data-i18n-placeholder="api_endpoint_placeholder" placeholder="API Endpoint URL (örn: https://api.example.com/v1/chat)">
+        <input type="text" id="custom-model" data-i18n-placeholder="api_model_placeholder" placeholder="Model Adı (opsiyonel)">
+      </div>
+      
+      <div class="api-key-container">
+        <input type="password" id="api-key" data-i18n-placeholder="api_key_placeholder" placeholder="API Anahtarı">
+        <button type="button" id="toggle-api-key" class="toggle-visibility-btn">👁️</button>
+      </div>
+      
+      <div class="button-group">
+        <button id="save-api" class="btn-primary" data-i18n="api_save">Kaydet</button>
+        <button id="delete-api" class="btn-secondary" data-i18n="api_delete">Sil</button>
+        <button id="reset-to-default" class="btn-secondary" style="display:none;">Varsayılana Dön</button>
+      </div>
+      
+      <div id="api-status"></div>
+    </div>
+    
+    <div class="tab-content" id="prompts-tab">
+      <h3 data-i18n="tab_prompts">Prompt Şablonları</h3>
+      <p class="info" data-i18n="prompt_info">ℹ️ AI'a gönderilen prompt şablonlarını buradan görüntüleyebilir ve düzenleyebilirsiniz</p>
+      
+      <div class="prompt-selector">
+        <label for="prompt-template-select" data-i18n="prompt_selector_label">Seçili Şablon:</label>
+        <select id="prompt-template-select">
+          <option value="template1" data-i18n="prompt_template_1">Şablon 1: Metni İyileştir + Metne Sadık Kal</option>
+          <option value="template2" data-i18n="prompt_template_2">Şablon 2: Metni İyileştir + Yapay Zeka ile Geliştir</option>
+          <option value="template3" data-i18n="prompt_template_3">Şablon 3: Prompt Haline Getir + Metne Sadık Kal</option>
+          <option value="template4" data-i18n="prompt_template_4">Şablon 4: Prompt Haline Getir + Yapay Zeka ile Geliştir</option>
+          <option value="template5" data-i18n="prompt_template_5">Şablon 5: Metin Özetle + Metne Sadık Kal</option>
+          <option value="template6" data-i18n="prompt_template_6">Şablon 6: Metin Özetle + Yapay Zeka ile Geliştir</option>
+        </select>
+      </div>
+      
+      <textarea class="prompt-editor" id="prompt-editor" rows="12" placeholder="Prompt şablonu..."></textarea>
+      
+      <div class="prompt-info">
+        <small data-i18n="prompt_placeholders">💡 <strong>Placeholder'lar:</strong> {Seçilen_Metin}, {Sayfa_Başlığı}, {Ek_Talimatlar}, {Hedef_Dil}</small>
+      </div>
+      
+      <div class="button-group">
+        <button id="reset-prompt" class="btn-secondary" data-i18n="button_reset">Varsayılana Dön</button>
+        <button id="save-prompt" class="btn-primary" data-i18n="button_save">Kaydet</button>
+      </div>
+      
+      <div id="prompt-status"></div>
+    </div>
+    
+    <div class="tab-content" id="history-tab">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <h3 style="margin: 0;" data-i18n="history_title">İşlem Geçmişi</h3>
+        <button id="clear-history" class="btn-secondary" style="padding: 6px 12px; font-size: 13px;" data-i18n="history_clear">🗑️ Tümünü Temizle</button>
+      </div>
+      <div id="history-list"></div>
+    </div>
+  </div>
+  
+  <!-- Global Aktif Provider Göstergesi -->
+  <div id="active-provider-display" style="
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    user-select: none;
+  " data-i18n-prefix="processing_activeProvider">Aktif: Yükleniyor...</div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

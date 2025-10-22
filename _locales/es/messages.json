@@ -1,0 +1,502 @@
+{
+  "appName": {
+    "message": "Asistente de Texto Inteligente",
+    "description": "Eklentinin adı"
+  },
+  "appDescription": {
+    "message": "Extensión de navegador segura que mejora textos seleccionados con IA y los convierte en prompts",
+    "description": "Eklentinin açıklaması"
+  },
+  "popup_title": {
+    "message": "Configuración",
+    "description": "Popup başlığı"
+  },
+  "popup_close": {
+    "message": "Cerrar",
+    "description": "Kapatma butonu"
+  },
+  "tab_general": {
+    "message": "General",
+    "description": "Genel ayarlar sekmesi"
+  },
+  "tab_api": {
+    "message": "Configuración de API",
+    "description": "API ayarları sekmesi"
+  },
+  "tab_prompts": {
+    "message": "Prompts",
+    "description": "Prompt şablonları sekmesi"
+  },
+  "tab_history": {
+    "message": "Historial",
+    "description": "İşlem geçmişi sekmesi"
+  },
+  "general_theme": {
+    "message": "Tema",
+    "description": "Tema ayarı etiketi"
+  },
+  "theme_light": {
+    "message": "Claro",
+    "description": "Aydınlık tema"
+  },
+  "theme_dark": {
+    "message": "Oscuro",
+    "description": "Karanlık tema"
+  },
+  "general_usePageTitle": {
+    "message": "Usar título de página como contexto",
+    "description": "Sayfa başlığı kullanım ayarı"
+  },
+  "general_language": {
+    "message": "Idioma de Interfaz",
+    "description": "Arayüz dili seçici etiketi"
+  },
+  "api_title": {
+    "message": "Configuración de API",
+    "description": "API ayarları başlığı"
+  },
+  "api_infoDefault": {
+    "message": "Predeterminado: Pollinations AI (GRATIS)",
+    "description": "Varsayılan AI bilgisi"
+  },
+  "api_infoDefaultDesc": {
+    "message": "¡Puedes usarlo sin ninguna configuración! No requiere clave API, completamente gratis.",
+    "description": "Varsayılan AI açıklaması"
+  },
+  "api_infoAlternatives": {
+    "message": "Alternativas más potentes:",
+    "description": "Alternatif AI'lar başlığı"
+  },
+  "api_provider_default": {
+    "message": "Predeterminado (Pollinations AI - Gratis, No Requiere Clave API)",
+    "description": "Varsayılan sağlayıcı"
+  },
+  "api_provider_default_short": {
+    "message": "Pollinations AI (Gratis)",
+    "description": "Varsayılan sağlayıcı kısa"
+  },
+  "api_provider_groq": {
+    "message": "Groq (Llama 3.3 70B - Tu Clave API)",
+    "description": "Groq sağlayıcı"
+  },
+  "api_provider_openai": {
+    "message": "OpenAI (GPT-3.5/GPT-4 - Tu Clave API)",
+    "description": "OpenAI sağlayıcı"
+  },
+  "api_provider_claude": {
+    "message": "Claude (Anthropic - Tu Clave API)",
+    "description": "Claude sağlayıcı"
+  },
+  "api_provider_gemini": {
+    "message": "Google Gemini (Tu Clave API)",
+    "description": "Gemini sağlayıcı"
+  },
+  "api_provider_cohere": {
+    "message": "Cohere (Tu Clave API)",
+    "description": "Cohere sağlayıcı"
+  },
+  "api_provider_custom": {
+    "message": "API Personalizada (Endpoint Personalizado)",
+    "description": "Özel API sağlayıcı"
+  },
+  "api_key_placeholder": {
+    "message": "Clave API",
+    "description": "API anahtarı placeholder"
+  },
+  "api_endpoint_placeholder": {
+    "message": "URL del Endpoint API (ej: https://api.example.com/v1/chat)",
+    "description": "API endpoint placeholder"
+  },
+  "api_model_placeholder": {
+    "message": "Nombre del Modelo (opcional)",
+    "description": "Model adı placeholder"
+  },
+  "api_save": {
+    "message": "Guardar",
+    "description": "Kaydet butonu"
+  },
+  "api_delete": {
+    "message": "Eliminar",
+    "description": "Sil butonu"
+  },
+  "api_saving": {
+    "message": "Guardando...",
+    "description": "Kaydetme durumu"
+  },
+  "api_success": {
+    "message": "✓ Clave API guardada",
+    "description": "Başarı mesajı"
+  },
+  "api_deleted": {
+    "message": "✓ Clave API eliminada",
+    "description": "Silme başarı mesajı"
+  },
+  "api_error": {
+    "message": "Error",
+    "description": "Hata etiketi"
+  },
+  "api_error_providerRequired": {
+    "message": "Por favor ingresa proveedor y clave API",
+    "description": "Sağlayıcı gerekli hatası"
+  },
+  "api_error_endpointRequired": {
+    "message": "Por favor ingresa URL del endpoint API",
+    "description": "Endpoint gerekli hatası"
+  },
+  "api_error_selectProvider": {
+    "message": "Por favor selecciona un proveedor",
+    "description": "Sağlayıcı seçimi hatası"
+  },
+  "api_getKeyGroq": {
+    "message": "Obtén clave API gratis aquí",
+    "description": "Groq API key alma linki"
+  },
+  "api_getKeyGemini": {
+    "message": "Obtén clave API gratis aquí",
+    "description": "Gemini API key alma linki"
+  },
+  "processing_title": {
+    "message": "Asistente de Texto Inteligente",
+    "description": "Processing popup başlığı"
+  },
+  "processing_activeProvider": {
+    "message": "Activo",
+    "description": "Aktif sağlayıcı göstergesi",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Groq"
+      }
+    }
+  },
+  "processing_loading": {
+    "message": "Cargando...",
+    "description": "Yükleme durumu"
+  },
+  "processing_selectedText": {
+    "message": "Texto Seleccionado",
+    "description": "Seçili metin etiketi"
+  },
+  "processing_characters": {
+    "message": "$COUNT$ caracteres",
+    "description": "Karakter sayısı",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "150"
+      }
+    }
+  },
+  "processing_limitExceeded": {
+    "message": "⚠️ Límite excedido",
+    "description": "Limit aşıldı uyarısı"
+  },
+  "processing_expandAll": {
+    "message": "👁️ Mostrar Todo",
+    "description": "Tümünü göster butonu"
+  },
+  "processing_collapse": {
+    "message": "👁️ Contraer",
+    "description": "Küçült butonu"
+  },
+  "processing_ready": {
+    "message": "🤖 IA lista",
+    "description": "Hazır durumu"
+  },
+  "processing_working": {
+    "message": "🤖 IA trabajando...",
+    "description": "Çalışma durumu"
+  },
+  "action_improve": {
+    "message": "Mejorar Texto",
+    "description": "İyileştirme işlemi"
+  },
+  "action_toPrompt": {
+    "message": "Convertir a Prompt",
+    "description": "Prompt oluşturma işlemi"
+  },
+  "action_summarize": {
+    "message": "Resumir Texto",
+    "description": "Özetleme işlemi"
+  },
+  "style_label": {
+    "message": "Estilo de Procesamiento:",
+    "description": "İşlem stili etiketi"
+  },
+  "style_faithful": {
+    "message": "Mantener Fidelidad",
+    "description": "Sadık kalma stili"
+  },
+  "style_enhance": {
+    "message": "Mejorar con IA",
+    "description": "Geliştirme stili"
+  },
+  "language_label": {
+    "message": "Idioma de Salida:",
+    "description": "Çıktı dili etiketi"
+  },
+  "language_turkish": {
+    "message": "🇹🇷 Turco",
+    "description": "Türkçe dili"
+  },
+  "language_english": {
+    "message": "🇺🇸 Inglés",
+    "description": "İngilizce dili"
+  },
+  "language_spanish": {
+    "message": "🇪🇸 Español",
+    "description": "İspanyolca dili"
+  },
+  "language_german": {
+    "message": "🇩🇪 Alemán",
+    "description": "Almanca dili"
+  },
+  "language_french": {
+    "message": "🇫🇷 Francés",
+    "description": "Fransızca dili"
+  },
+  "button_process": {
+    "message": "🚀 Procesar",
+    "description": "İşle butonu"
+  },
+  "button_viewPrompt": {
+    "message": "Ver Prompt",
+    "description": "Prompt görüntüleme butonu tooltip"
+  },
+  "button_copy": {
+    "message": "📋 Copiar",
+    "description": "Kopyala butonu"
+  },
+  "button_copied": {
+    "message": "✓ ¡Copiado!",
+    "description": "Kopyalandı durumu"
+  },
+  "button_retry": {
+    "message": "🔄 Reintentar",
+    "description": "Tekrar dene butonu"
+  },
+  "button_edit": {
+    "message": "✏️ Editar",
+    "description": "Düzenle butonu"
+  },
+  "button_save": {
+    "message": "💾 Guardar",
+    "description": "Kaydet butonu"
+  },
+  "button_reset": {
+    "message": "🔄 Restablecer Predeterminado",
+    "description": "Sıfırla butonu"
+  },
+  "button_cancel": {
+    "message": "Cancelar",
+    "description": "İptal butonu"
+  },
+  "placeholder_instructions": {
+    "message": "Instrucciones adicionales (opcional)",
+    "description": "Ek talimatlar placeholder"
+  },
+  "error_textTooLong": {
+    "message": "Texto Demasiado Largo",
+    "description": "Metin çok uzun hatası başlığı"
+  },
+  "error_textTooLongDesc": {
+    "message": "El texto seleccionado tiene $COUNT$ caracteres. La IA gratuita acepta máximo 5000 caracteres.",
+    "description": "Metin çok uzun hatası açıklaması",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "7500"
+      }
+    }
+  },
+  "error_solution": {
+    "message": "🚀 Solución:",
+    "description": "Çözüm başlığı"
+  },
+  "error_solutionDesc": {
+    "message": "• Agrega clave API para procesar texto ilimitado",
+    "description": "Çözüm açıklaması"
+  },
+  "error_alternative": {
+    "message": "💡 Alternativa:",
+    "description": "Alternatif başlığı"
+  },
+  "error_alternativeDesc": {
+    "message": "• Metni 5000 karakterden kısa tutun\n• Sadece önemli kısımları seçin",
+    "description": "Alternatif açıklaması"
+  },
+  "error_addApiKey": {
+    "message": "🔑 Agregar Clave API",
+    "description": "API anahtarı ekleme butonu"
+  },
+  "error_apiOpening": {
+    "message": "🔑 Abriendo configuración de API...",
+    "description": "API ayarları açılma durumu"
+  },
+  "error_extensionReloaded": {
+    "message": "⚠️ Extensión recargada.",
+    "description": "Eklenti yeniden yüklendi hatası"
+  },
+  "error_pleaseReload": {
+    "message": "Por favor recarga la página (F5)",
+    "description": "Sayfa yenileme talebi"
+  },
+  "error_connectionLost": {
+    "message": "⚠️ Conexión de extensión perdida.",
+    "description": "Bağlantı koptu hatası"
+  },
+  "history_title": {
+    "message": "Historial de Procesamiento",
+    "description": "Geçmiş başlığı"
+  },
+  "history_clear": {
+    "message": "🗑️ Limpiar Todo",
+    "description": "Geçmişi temizle butonu"
+  },
+  "history_clearConfirm": {
+    "message": "¿Estás seguro de que quieres eliminar todo el historial de procesamiento? ¡Esta acción no se puede deshacer!",
+    "description": "Geçmiş temizleme onayı"
+  },
+  "history_empty": {
+    "message": "Aún no hay historial de procesamiento",
+    "description": "Boş geçmiş mesajı"
+  },
+  "history_delete": {
+    "message": "❌ Eliminar",
+    "description": "Geçmiş öğesi silme butonu"
+  },
+  "history_deleteConfirm": {
+    "message": "¿Estás seguro de que quieres eliminar este registro de procesamiento?",
+    "description": "Geçmiş öğesi silme onayı"
+  },
+  "history_text": {
+    "message": "Texto:",
+    "description": "Metin etiketi"
+  },
+  "history_result": {
+    "message": "Resultado:",
+    "description": "Sonuç etiketi"
+  },
+  "history_provider": {
+    "message": "IA: $PROVIDER$",
+    "description": "Sağlayıcı etiketi",
+    "placeholders": {
+      "provider": {
+        "content": "$1",
+        "example": "Groq"
+      }
+    }
+  },
+  "history_action_improve": {
+    "message": "🔧 Mejora de Texto",
+    "description": "İyileştirme işlemi geçmiş"
+  },
+  "history_action_toPrompt": {
+    "message": "🎯 Creación de Prompt",
+    "description": "Prompt oluşturma işlemi geçmiş"
+  },
+  "history_action_summarize": {
+    "message": "📝 Resumen de Texto",
+    "description": "Özetleme işlemi geçmiş"
+  },
+  "history_style_faithful": {
+    "message": "Mantener Fidelidad",
+    "description": "Sadık kalma stili geçmiş"
+  },
+  "history_style_enhance": {
+    "message": "Mejorar con IA",
+    "description": "Geliştirme stili geçmiş"
+  },
+  "prompt_title": {
+    "message": "📜 Prompt a Enviar",
+    "description": "Prompt başlığı"
+  },
+  "prompt_info": {
+    "message": "ℹ️ Puedes ver y editar las plantillas de prompt enviadas a la IA aquí",
+    "description": "Prompt bilgi mesajı"
+  },
+  "prompt_selector_label": {
+    "message": "Plantilla Seleccionada:",
+    "description": "Şablon seçici etiketi"
+  },
+  "prompt_template_1": {
+    "message": "Plantilla 1: Mejorar Texto + Mantener Fidelidad",
+    "description": "Şablon 1 adı"
+  },
+  "prompt_template_2": {
+    "message": "Plantilla 2: Mejorar Texto + Mejorar con IA",
+    "description": "Şablon 2 adı"
+  },
+  "prompt_template_3": {
+    "message": "Plantilla 3: Convertir a Prompt + Mantener Fidelidad",
+    "description": "Şablon 3 adı"
+  },
+  "prompt_template_4": {
+    "message": "Plantilla 4: Convertir a Prompt + Mejorar con IA",
+    "description": "Şablon 4 adı"
+  },
+  "prompt_template_5": {
+    "message": "Plantilla 5: Resumir Texto + Mantener Fidelidad",
+    "description": "Şablon 5 adı"
+  },
+  "prompt_template_6": {
+    "message": "Plantilla 6: Resumir Texto + Mejorar con IA",
+    "description": "Şablon 6 adı"
+  },
+  "prompt_placeholders": {
+    "message": "💡 Marcadores: {Selected_Text}, {Page_Title}, {Additional_Instructions}, {Target_Language}",
+    "description": "Placeholder bilgisi"
+  },
+  "prompt_resetConfirm": {
+    "message": "¿Estás seguro de que quieres restablecer la plantilla a su valor predeterminado?",
+    "description": "Şablon sıfırlama onayı"
+  },
+  "prompt_saved": {
+    "message": "✓ Prompt guardado",
+    "description": "Prompt kaydetme başarı mesajı"
+  },
+  "prompt_reset": {
+    "message": "✓ Plantilla predeterminada restaurada",
+    "description": "Şablon sıfırlama başarı mesajı"
+  },
+  "provider_default": {
+    "message": "IA Predeterminada (Pollinations)",
+    "description": "Varsayılan sağlayıcı adı"
+  },
+  "provider_groq": {
+    "message": "Groq",
+    "description": "Groq sağlayıcı adı"
+  },
+  "provider_openai": {
+    "message": "OpenAI",
+    "description": "OpenAI sağlayıcı adı"
+  },
+  "provider_claude": {
+    "message": "Claude",
+    "description": "Claude sağlayıcı adı"
+  },
+  "provider_gemini": {
+    "message": "Gemini",
+    "description": "Gemini sağlayıcı adı"
+  },
+  "provider_cohere": {
+    "message": "Cohere",
+    "description": "Cohere sağlayıcı adı"
+  },
+  "provider_custom": {
+    "message": "API Personalizada",
+    "description": "Özel API sağlayıcı adı"
+  },
+  "selection_button_title": {
+    "message": "Asistente de Texto Inteligente",
+    "description": "Seçim butonu tooltip"
+  },
+  "selection_button_aria": {
+    "message": "Abrir Asistente de Texto Inteligente para procesamiento de texto",
+    "description": "Seçim butonu aria-label"
+  },
+  "selection_button_close": {
+    "message": "Cerrar",
+    "description": "Seçim butonu kapatma tooltip"
+  }
+}
