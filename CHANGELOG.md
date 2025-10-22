@@ -21,9 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### 🎨 Modern CSS Design System
 - **CSS Variables**: 70+ design tokens for colors, typography, spacing, shadows, and transitions
 - **Consistent Theming**: Unified color palette across light and dark themes
-- **WCAG 2.1 AA Compliance**: Improved contrast ratios for better accessibility
 - **Enhanced Dark Theme**: Optimized colors and shadows for dark mode
 - **Typography System**: Standardized font sizes, weights, and line heights
+- **Improved Contrast**: Better color contrast ratios for readability
 - **Spacing System**: Consistent spacing scale throughout the UI
 - **Modern Shadows**: Refined shadow system for depth and hierarchy
 - **Smooth Transitions**: Optimized animation performance
@@ -44,9 +44,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Improved
 - **Performance**: Faster load times with template caching
-- **Accessibility**: Better contrast ratios and ARIA labels
 - **User Experience**: Smoother animations and transitions
 - **Code Quality**: Modular i18n system with clear separation of concerns
+- **Visual Design**: Better color contrast and modern UI elements
 - **Maintainability**: Centralized translation management
 
 ### Fixed

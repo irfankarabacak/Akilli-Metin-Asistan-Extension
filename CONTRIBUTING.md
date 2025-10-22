@@ -129,9 +129,9 @@ Example: `feat: add Spanish language support`
 ### UI/UX Principles
 - Keep it simple and intuitive
 - Maintain consistency
-- Ensure accessibility (WCAG 2.1 AA)
 - Test with different themes
 - Consider mobile viewports
+- Ensure good color contrast
 
 ### CSS Standards
 - Use CSS variables
@@ -157,7 +157,7 @@ Example: `feat: add Spanish language support`
 - Documentation
 - Performance impact
 - Security considerations
-- Accessibility compliance
+- User experience improvements
 
 ## 🤔 Questions?
 

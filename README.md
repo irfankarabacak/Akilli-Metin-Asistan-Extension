@@ -35,7 +35,6 @@
 - **🌙 Dark/Light Theme** - Seamless theme switching
 - **🎭 Smooth Animations** - Polished user experience
 - **📱 Responsive Design** - Works on all screen sizes
-- **♿ Accessible** - WCAG 2.1 AA compliant
 
 ### ⚡ Performance
 - **Fast Processing** - Optimized AI calls with retry logic

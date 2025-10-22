@@ -836,7 +836,7 @@
 /* ============================================================================ */
 
 .sta-popup.sta-dark-theme {
-  /* Dark Theme Color Overrides - Optimized for WCAG 2.1 AA */
+  /* Dark Theme Color Overrides */
   --sta-background: #0d1117;
   --sta-surface: #161b22;
   --sta-surface-hover: #21262d;
