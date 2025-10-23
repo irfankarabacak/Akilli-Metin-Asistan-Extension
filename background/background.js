@@ -1805,6 +1805,23 @@ chrome.runtime.onInstalled.addListener(async (details) => {
       
       console.log(`Varsayılan dil ayarlandı: ${defaultLocale}`);
       
+      // Varsayılan ayarları oluştur
+      const settings = await getSettings();
+      if (!settings || Object.keys(settings).length === 0) {
+        await saveSettings({
+          theme: 'light',
+          usePageTitle: true,
+          defaultLanguage: defaultLocale === 'tr' ? 'Türkçe' : 
+                          defaultLocale === 'en' ? 'English' :
+                          defaultLocale === 'es' ? 'Español' :
+                          defaultLocale === 'de' ? 'Deutsch' :
+                          defaultLocale === 'fr' ? 'Français' : 'Türkçe',
+          defaultMainAction: 'improve',
+          defaultProcessingStyle: 'faithful'
+        });
+        console.log('Varsayılan ayarlar oluşturuldu');
+      }
+      
     } else if (details.reason === 'update') {
       // Güncelleme
       const previousVersion = details.previousVersion;
@@ -1895,25 +1912,4 @@ async function handleProcessText(data) {
   }
 }
 
-/**
- * Eklenti yüklendiğinde varsayılan ayarları oluştur
- */
-chrome.runtime.onInstalled.addListener(async () => {
-  //console.log('Eklenti yüklendi, varsayılan ayarlar kontrol ediliyor...');
-  
-  try {
-    const settings = await getSettings();
-    if (!settings || Object.keys(settings).length === 0) {
-      await saveSettings({
-        theme: 'light',
-        usePageTitle: true,
-        defaultLanguage: 'Türkçe',
-        defaultMainAction: 'improve',
-        defaultProcessingStyle: 'faithful'
-      });
-      //console.log('Varsayılan ayarlar oluşturuldu');
-    }
-  } catch (error) {
-    //console.error('Ayarlar oluşturma hatası:', error);
-  }
-});
+
