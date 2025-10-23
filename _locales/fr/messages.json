@@ -498,5 +498,217 @@
   "selection_button_close": {
     "message": "Fermer",
     "description": "Seçim butonu kapatma tooltip"
+  },
+  "error_network_connection": {
+    "message": "Vérifiez votre connexion Internet. Pollinations AI est inaccessible.",
+    "description": "Erreur de connexion réseau"
+  },
+  "error_request_timeout": {
+    "message": "La requête a expiré (timeout). Votre connexion Internet peut être lente.",
+    "description": "Erreur de délai d'attente de la requête"
+  },
+  "error_rate_limit_general": {
+    "message": "Limite de taux (rate limit) dépassée. Veuillez attendre quelques secondes et réessayer.",
+    "description": "Erreur générale de limite de taux"
+  },
+  "error_invalid_api_key": {
+    "message": "Clé API non valide. Veuillez vérifier vos paramètres.",
+    "description": "Erreur de clé API non valide"
+  },
+  "error_api_access_forbidden": {
+    "message": "Accès à l'API refusé. Veuillez vérifier votre clé API.",
+    "description": "Erreur d'accès à l'API interdit"
+  },
+  "error_api_service_unavailable": {
+    "message": "Le service API est actuellement indisponible. Veuillez réessayer plus tard.",
+    "description": "Erreur de service API indisponible"
+  },
+  "error_pollinations_rate_limit": {
+    "message": "Pollinations AI a reçu trop de requêtes. Veuillez attendre 30 secondes et réessayer. (Il peut être occupé car c'est un service gratuit)",
+    "description": "Erreur de limite de taux de Pollinations"
+  },
+  "error_pollinations_invalid_request": {
+    "message": "Requête non valide. Le texte peut être trop long ; essayez avec un texte plus court.",
+    "description": "Erreur de requête non valide de Pollinations"
+  },
+  "error_pollinations_service_down": {
+    "message": "Le service Pollinations AI est actuellement en panne. Comme il s'agit d'un service gratuit, des interruptions occasionnelles peuvent se produire. Veuillez réessayer dans 5-10 minutes.",
+    "description": "Erreur de service Pollinations en panne"
+  },
+  "error_pollinations_timeout": {
+    "message": "Pollinations AI n'a pas répondu (timeout). Le service peut être occupé, veuillez réessayer.",
+    "description": "Erreur de timeout de Pollinations"
+  },
+  "error_groq_quota_exceeded": {
+    "message": "Votre quota d'API Groq a été dépassé. Le plan gratuit a une limite quotidienne. Réessayez demain ou passez à un plan payant.",
+    "description": "Erreur de quota Groq dépassé"
+  },
+  "error_groq_rate_limit": {
+    "message": "Limite de taux Groq dépassée. Le plan gratuit a une limite de 30 requêtes par minute. Veuillez attendre 1 minute et réessayer.",
+    "description": "Erreur de limite de taux de Groq"
+  },
+  "error_groq_invalid_key": {
+    "message": "Votre clé API Groq n'est pas valide. Générez une nouvelle clé depuis la Console Groq (console.groq.com).",
+    "description": "Erreur de clé API Groq non valide"
+  },
+  "error_groq_access_forbidden": {
+    "message": "Accès à l'API Groq refusé. Assurez-vous que votre clé API est active.",
+    "description": "Erreur d'accès à Groq interdit"
+  },
+  "error_groq_model_unavailable": {
+    "message": "Le modèle Groq sélectionné n'est pas disponible. Essayez un modèle différent.",
+    "description": "Erreur de modèle Groq indisponible"
+  },
+  "error_text_too_long": {
+    "message": "Le texte est trop long. Veuillez sélectionner un texte plus court et réessayer.",
+    "description": "Erreur de texte trop long"
+  },
+  "error_invalid_request_length": {
+    "message": "Requête non valide. Veuillez vérifier la longueur du texte.",
+    "description": "Erreur de longueur de requête non valide"
+  },
+  "error_groq_service_down": {
+    "message": "Les services Groq sont actuellement en panne. Veuillez réessayer dans 5-10 minutes.",
+    "description": "Erreur de service Groq en panne"
+  },
+  "error_groq_timeout": {
+    "message": "Groq n'a pas répondu (timeout). Veuillez réessayer.",
+    "description": "Erreur de timeout de Groq"
+  },
+  "error_openai_quota_exceeded": {
+    "message": "Votre quota d'API OpenAI a été dépassé. Vérifiez votre plan de facturation ou attendez le nouveau cycle de facturation.",
+    "description": "Erreur de quota OpenAI dépassé"
+  },
+  "error_openai_too_many_requests": {
+    "message": "Vous avez envoyé trop de requêtes. Veuillez attendre 20-30 secondes et réessayer.",
+    "description": "Erreur de trop de requêtes OpenAI"
+  },
+  "error_openai_rate_limit": {
+    "message": "Limite de taux OpenAI dépassée. Veuillez attendre quelques minutes et réessayer.",
+    "description": "Erreur de limite de taux d'OpenAI"
+  },
+  "error_openai_invalid_key": {
+    "message": "Votre clé API OpenAI n'est pas valide. Entrez la clé correcte dans Paramètres > Paramètres API.",
+    "description": "Erreur de clé API OpenAI non valide"
+  },
+  "error_openai_access_forbidden": {
+    "message": "Accès à l'API OpenAI refusé. Assurez-vous que votre clé API est active.",
+    "description": "Erreur d'accès à OpenAI interdit"
+  },
+  "error_openai_model_unavailable": {
+    "message": "Le modèle sélectionné n'est pas disponible. Essayez un modèle différent.",
+    "description": "Erreur de modèle OpenAI indisponible"
+  },
+  "error_openai_service_down": {
+    "message": "Les services OpenAI sont actuellement en panne. Veuillez réessayer dans 5-10 minutes.",
+    "description": "Erreur de service OpenAI en panne"
+  },
+  "error_openai_timeout": {
+    "message": "OpenAI n'a pas répondu (timeout). Veuillez réessayer.",
+    "description": "Erreur de timeout d'OpenAI"
+  },
+  "error_claude_quota_exceeded": {
+    "message": "Votre quota d'API Claude a été dépassé. Vérifiez votre plan de facturation dans votre compte Anthropic.",
+    "description": "Erreur de quota Claude dépassé"
+  },
+  "error_claude_rate_limit": {
+    "message": "Limite de taux Claude dépassée. Veuillez attendre 1-2 minutes et réessayer.",
+    "description": "Erreur de limite de taux de Claude"
+  },
+  "error_claude_invalid_key": {
+    "message": "Votre clé API Claude n'est pas valide. Générez une nouvelle clé depuis la Console Anthropic.",
+    "description": "Erreur de clé API Claude non valide"
+  },
+  "error_claude_access_forbidden": {
+    "message": "Accès à l'API Claude refusé. Assurez-vous que votre clé API est active.",
+    "description": "Erreur d'accès à Claude interdit"
+  },
+  "error_claude_invalid_format": {
+    "message": "Requête non valide. Veuillez vérifier le format du texte.",
+    "description": "Erreur de format non valide de Claude"
+  },
+  "error_claude_service_down": {
+    "message": "Les services Claude sont actuellement en panne. Veuillez réessayer dans 5-10 minutes.",
+    "description": "Erreur de service Claude en panne"
+  },
+  "error_claude_overloaded": {
+    "message": "Les services Claude sont surchargés. Veuillez réessayer dans quelques minutes.",
+    "description": "Erreur de Claude surchargé"
+  },
+  "error_gemini_invalid_key": {
+    "message": "Votre clé API Gemini n'est pas valide. Générez une nouvelle clé depuis Google AI Studio (aistudio.google.com/api-keys).",
+    "description": "Erreur de clé API Gemini non valide"
+  },
+  "error_gemini_safety_filter": {
+    "message": "Contenu bloqué par le filtre de sécurité. Essayez avec un texte différent.",
+    "description": "Erreur de filtre de sécurité de Gemini"
+  },
+  "error_gemini_model_unavailable": {
+    "message": "Le modèle Gemini sélectionné n'est pas disponible. Essayez un modèle différent.",
+    "description": "Erreur de modèle Gemini indisponible"
+  },
+  "error_gemini_access_forbidden": {
+    "message": "Accès à l'API Gemini refusé. Activez l'API dans Google AI Studio et activez la facturation.",
+    "description": "Erreur d'accès à Gemini interdit"
+  },
+  "error_gemini_rate_limit": {
+    "message": "Limite de taux Gemini dépassée. Le plan gratuit a une limite de 15 requêtes par minute. Veuillez attendre 1 minute et réessayer.",
+    "description": "Erreur de limite de taux de Gemini"
+  },
+  "error_gemini_service_down": {
+    "message": "Les services Gemini sont actuellement en panne. Veuillez réessayer dans 5-10 minutes.",
+    "description": "Erreur de service Gemini en panne"
+  },
+  "error_gemini_timeout": {
+    "message": "Gemini n'a pas répondu (timeout). Veuillez réessayer.",
+    "description": "Erreur de timeout de Gemini"
+  },
+  "error_gemini_invalid_response": {
+    "message": "Format de réponse non valide de l'API Gemini.",
+    "description": "Erreur de réponse non valide de Gemini"
+  },
+  "error_cohere_rate_limit": {
+    "message": "Limite de taux Cohere dépassée. Les comptes d'essai ont une limite de 5 requêtes par minute. Veuillez attendre 1 minute et réessayer.",
+    "description": "Erreur de limite de taux de Cohere"
+  },
+  "error_cohere_invalid_key": {
+    "message": "Votre clé API Cohere n'est pas valide. Générez une nouvelle clé depuis le Tableau de bord Cohere.",
+    "description": "Erreur de clé API Cohere non valide"
+  },
+  "error_cohere_access_forbidden": {
+    "message": "Accès à l'API Cohere refusé. Assurez-vous que votre clé API est active.",
+    "description": "Erreur d'accès à Cohere interdit"
+  },
+  "error_cohere_service_down": {
+    "message": "Les services Cohere sont actuellement en panne. Veuillez réessayer dans 5-10 minutes.",
+    "description": "Erreur de service Cohere en panne"
+  },
+  "error_cohere_invalid_response": {
+    "message": "Format de réponse non valide de l'API Cohere.",
+    "description": "Erreur de réponse non valide de Cohere"
+  },
+  "error_custom_rate_limit": {
+    "message": "Limite de taux de l'API personnalisée dépassée. Veuillez attendre quelques minutes et réessayer.",
+    "description": "Erreur de limite de taux de l'API personnalisée"
+  },
+  "error_custom_invalid_key": {
+    "message": "Votre clé API personnalisée n'est pas valide. Veuillez vérifier vos paramètres.",
+    "description": "Erreur de clé API personnalisée non valide"
+  },
+  "error_custom_access_forbidden": {
+    "message": "Accès à l'API personnalisée refusé. Vérifiez votre clé API et votre point de terminaison.",
+    "description": "Erreur d'accès à l'API personnalisée interdit"
+  },
+  "error_custom_invalid_request": {
+    "message": "Requête non valide. Vérifiez le format du point de terminaison de l'API et le nom du modèle.",
+    "description": "Erreur de requête non valide de l'API personnalisée"
+  },
+  "error_custom_endpoint_not_found": {
+    "message": "Point de terminaison de l'API introuvable. Veuillez vérifier l'URL du point de terminaison.",
+    "description": "Erreur de point de terminaison de l'API personnalisée introuvable"
+  },
+  "error_custom_service_unavailable": {
+    "message": "Le service API personnalisé est actuellement indisponible. Veuillez réessayer plus tard.",
+    "description": "Erreur de service API personnalisé indisponible"
   }
 }

@@ -162,9 +162,9 @@ async function loadCurrentLocale() {
     }
   } catch (error) {
     console.error('loadCurrentLocale error:', error);
-    // Fallback: Türkçe yükle
-    currentLocale = 'tr';
-    await loadTranslations('tr');
+    // Fallback: İngilizce yükle
+    currentLocale = 'en';
+    await loadTranslations('en');
   }
 }
 

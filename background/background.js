@@ -25,10 +25,13 @@ async function getCurrentLocale() {
       return result.language_preferences.uiLocale;
     }
     // Varsayılan: tarayıcı dili
-    return chrome.i18n.getUILanguage().split('-')[0]; // 'en-US' -> 'en'
+    const browserLocale = chrome.i18n.getUILanguage().split('-')[0]; // 'en-US' -> 'en'
+    const supportedLocales = getSupportedLocales();
+    // Desteklenmiyorsa İngilizce
+    return supportedLocales.includes(browserLocale) ? browserLocale : 'en';
   } catch (error) {
     console.error('getCurrentLocale error:', error);
-    return 'tr'; // Fallback
+    return 'en'; // Fallback: English
   }
 }
 
@@ -93,6 +96,17 @@ function getMessage(key, substitutions) {
     console.warn(`Translation key not found: ${key}`);
     return key;
   }
+}
+
+/**
+ * Hata mesajını i18n ile al
+ * @param {string} errorKey - Hata mesajı anahtarı (error_ prefix'i olmadan)
+ * @param {object} substitutions - Opsiyonel değişken değerleri
+ * @returns {string} Yerelleştirilmiş hata mesajı
+ */
+function getErrorMessage(errorKey, substitutions) {
+  const fullKey = errorKey.startsWith('error_') ? errorKey : `error_${errorKey}`;
+  return getMessage(fullKey, substitutions);
 }
 
 /**
@@ -828,16 +842,16 @@ async function callPollinations(prompt, retryCount = 0) {
       
       // Detaylı hata mesajları - Pollinations AI
       if (response.status === 429) {
-        throw new Error('Pollinations AI çok fazla istek aldı. 30 saniye bekleyip tekrar deneyin. (Ücretsiz servis olduğu için yoğun olabilir)');
+        throw new Error(getErrorMessage('pollinations_rate_limit'));
       } else if (response.status === 400) {
-        throw new Error('Geçersiz istek. Metin çok uzun olabilir, daha kısa bir metin deneyin.');
+        throw new Error(getErrorMessage('pollinations_invalid_request'));
       } else if (response.status === 500 || response.status === 502 || response.status === 503) {
-        throw new Error('Pollinations AI servisi şu anda çalışmıyor. Bu ücretsiz bir servis olduğu için bazen kesintiler olabilir. 5-10 dakika sonra tekrar deneyin.');
+        throw new Error(getErrorMessage('pollinations_service_down'));
       } else if (response.status === 504) {
-        throw new Error('Pollinations AI yanıt vermedi (timeout). Servis yoğun olabilir, lütfen tekrar deneyin.');
+        throw new Error(getErrorMessage('pollinations_timeout'));
       }
       
-      throw new Error(`Pollinations AI hatası (${response.status}): ${errorDetail.substring(0, 100)}`);
+      throw new Error(`Pollinations AI (${response.status}): ${errorDetail.substring(0, 100)}`);
     }
 
     // Response düz text olarak geliyor (JSON değil)
@@ -850,12 +864,12 @@ async function callPollinations(prompt, retryCount = 0) {
     
     // Network hataları
     if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-      throw new Error('İnternet bağlantınızı kontrol edin. Pollinations AI\'ya erişilemiyor.');
+      throw new Error(getErrorMessage('network_connection'));
     } else if (error.message.includes('timeout')) {
-      throw new Error('İstek zaman aşımına uğradı. İnternet bağlantınız yavaş olabilir.');
+      throw new Error(getErrorMessage('request_timeout'));
     }
     
-    throw new Error(`Pollinations AI çağrısı başarısız: ${error.message}`);
+    throw error; // Zaten yerelleştirilmiş hata mesajını koru
   }
 }
 
@@ -907,28 +921,28 @@ return await callGroq(prompt, apiKey, retryCount + 1);
       if (response.status === 429) {
         const errorMsg = errorData.error?.message || '';
         if (errorMsg.includes('quota')) {
-          throw new Error('Groq API kotanız doldu. Ücretsiz planda günlük limit var. Yarın tekrar deneyin veya ücretli plana geçin.');
+          throw new Error(getErrorMessage('groq_quota_exceeded'));
         }
-        throw new Error('Groq rate limit aşıldı. Ücretsiz planda dakikada 30 istek limiti var. 1 dakika bekleyip tekrar deneyin.');
+        throw new Error(getErrorMessage('groq_rate_limit'));
       } else if (response.status === 401) {
-        throw new Error('Groq API anahtarınız geçersiz. Groq Console\'dan (console.groq.com) yeni anahtar oluşturun.');
+        throw new Error(getErrorMessage('groq_invalid_key'));
       } else if (response.status === 403) {
-        throw new Error('Groq API erişim izniniz yok. API anahtarınızın aktif olduğundan emin olun.');
+        throw new Error(getErrorMessage('groq_access_forbidden'));
       } else if (response.status === 400) {
         const errorMsg = errorData.error?.message || '';
         if (errorMsg.includes('model')) {
-          throw new Error('Seçilen Groq modeli kullanılamıyor. Farklı bir model deneyin.');
+          throw new Error(getErrorMessage('groq_model_unavailable'));
         } else if (errorMsg.includes('max_tokens')) {
-          throw new Error('Metin çok uzun. Daha kısa bir metin seçip tekrar deneyin.');
+          throw new Error(getErrorMessage('text_too_long'));
         }
-        throw new Error('Geçersiz istek. Lütfen metin uzunluğunu kontrol edin.');
+        throw new Error(getErrorMessage('invalid_request_length'));
       } else if (response.status === 500 || response.status === 502 || response.status === 503) {
-        throw new Error('Groq servisleri şu anda çalışmıyor. 5-10 dakika sonra tekrar deneyin.');
+        throw new Error(getErrorMessage('groq_service_down'));
       } else if (response.status === 504) {
-        throw new Error('Groq yanıt vermedi (timeout). Lütfen tekrar deneyin.');
+        throw new Error(getErrorMessage('groq_timeout'));
       }
       
-      throw new Error(`Groq API hatası (${response.status}): ${errorDetail.substring(0, 100)}`);
+      throw new Error(`Groq API (${response.status}): ${errorDetail.substring(0, 100)}`);
     }
 
     const data = await response.json();
@@ -938,7 +952,7 @@ return await callGroq(prompt, apiKey, retryCount + 1);
     
   } catch (error) {
     //console.error('Groq AI API hatası:', error);
-    throw new Error(`AI çağrısı başarısız: ${error.message}`);
+    throw error; // Zaten yerelleştirilmiş hata mesajını koru
   }
 }
 
@@ -976,37 +990,37 @@ async function callOpenAI(prompt, apiKey) {
       if (response.status === 429) {
         const errorMsg = errorData.error?.message || '';
         if (errorMsg.includes('quota')) {
-          throw new Error('OpenAI API kotanız doldu. Ödeme planınızı kontrol edin veya yeni ay başını bekleyin.');
+          throw new Error(getErrorMessage('openai_quota_exceeded'));
         } else if (errorMsg.includes('rate_limit')) {
-          throw new Error('Çok fazla istek gönderdiniz. 20-30 saniye bekleyip tekrar deneyin.');
+          throw new Error(getErrorMessage('openai_too_many_requests'));
         }
-        throw new Error('OpenAI rate limit aşıldı. Lütfen birkaç dakika bekleyip tekrar deneyin.');
+        throw new Error(getErrorMessage('openai_rate_limit'));
       } else if (response.status === 401) {
-        throw new Error('OpenAI API anahtarınız geçersiz. Ayarlar > API Ayarları bölümünden doğru anahtarı girin.');
+        throw new Error(getErrorMessage('openai_invalid_key'));
       } else if (response.status === 403) {
-        throw new Error('OpenAI API erişim izniniz yok. API anahtarınızın aktif olduğundan emin olun.');
+        throw new Error(getErrorMessage('openai_access_forbidden'));
       } else if (response.status === 400) {
         const errorMsg = errorData.error?.message || '';
         if (errorMsg.includes('model')) {
-          throw new Error('Seçilen model kullanılamıyor. Farklı bir model deneyin.');
+          throw new Error(getErrorMessage('openai_model_unavailable'));
         } else if (errorMsg.includes('max_tokens')) {
-          throw new Error('Metin çok uzun. Daha kısa bir metin seçip tekrar deneyin.');
+          throw new Error(getErrorMessage('text_too_long'));
         }
-        throw new Error('Geçersiz istek. Lütfen metin uzunluğunu kontrol edin.');
+        throw new Error(getErrorMessage('invalid_request_length'));
       } else if (response.status === 500 || response.status === 502 || response.status === 503) {
-        throw new Error('OpenAI servisleri şu anda çalışmıyor. 5-10 dakika sonra tekrar deneyin.');
+        throw new Error(getErrorMessage('openai_service_down'));
       } else if (response.status === 504) {
-        throw new Error('OpenAI yanıt vermedi (timeout). Lütfen tekrar deneyin.');
+        throw new Error(getErrorMessage('openai_timeout'));
       }
       
-      throw new Error(errorData.error?.message || `OpenAI API hatası (${response.status})`);
+      throw new Error(errorData.error?.message || `OpenAI API (${response.status})`);
     }
 
     const data = await response.json();
     return data.choices[0].message.content.trim();
   } catch (error) {
     //console.error('OpenAI API hatası:', error);
-    throw new Error(`OpenAI çağrısı başarısız: ${error.message}`);
+    throw error; // Zaten yerelleştirilmiş hata mesajını koru
   }
 }
 
@@ -1044,33 +1058,33 @@ async function callClaude(prompt, apiKey) {
       if (response.status === 429) {
         const errorMsg = errorData.error?.message || '';
         if (errorMsg.includes('quota')) {
-          throw new Error('Claude API kotanız doldu. Anthropic hesabınızdan ödeme planınızı kontrol edin.');
+          throw new Error(getErrorMessage('claude_quota_exceeded'));
         }
-        throw new Error('Claude rate limit aşıldı. 1-2 dakika bekleyip tekrar deneyin.');
+        throw new Error(getErrorMessage('claude_rate_limit'));
       } else if (response.status === 401) {
-        throw new Error('Claude API anahtarınız geçersiz. Anthropic Console\'dan yeni anahtar oluşturun.');
+        throw new Error(getErrorMessage('claude_invalid_key'));
       } else if (response.status === 403) {
-        throw new Error('Claude API erişim izniniz yok. API anahtarınızın aktif olduğundan emin olun.');
+        throw new Error(getErrorMessage('claude_access_forbidden'));
       } else if (response.status === 400) {
         const errorMsg = errorData.error?.message || '';
         if (errorMsg.includes('max_tokens')) {
-          throw new Error('Metin çok uzun. Daha kısa bir metin seçip tekrar deneyin.');
+          throw new Error(getErrorMessage('text_too_long'));
         }
-        throw new Error('Geçersiz istek. Lütfen metin formatını kontrol edin.');
+        throw new Error(getErrorMessage('claude_invalid_format'));
       } else if (response.status === 500 || response.status === 502 || response.status === 503) {
-        throw new Error('Claude servisleri şu anda çalışmıyor. 5-10 dakika sonra tekrar deneyin.');
+        throw new Error(getErrorMessage('claude_service_down'));
       } else if (response.status === 529) {
-        throw new Error('Claude servisleri aşırı yüklü. Lütfen birkaç dakika sonra tekrar deneyin.');
+        throw new Error(getErrorMessage('claude_overloaded'));
       }
       
-      throw new Error(errorData.error?.message || `Claude API hatası (${response.status})`);
+      throw new Error(errorData.error?.message || `Claude API (${response.status})`);
     }
 
     const data = await response.json();
     return data.content[0].text.trim();
   } catch (error) {
     //console.error('Claude API hatası:', error);
-    throw new Error(`Claude çağrısı başarısız: ${error.message}`);
+    throw error; // Zaten yerelleştirilmiş hata mesajını koru
   }
 }
 
@@ -1261,24 +1275,24 @@ async function callGeminiBasic(prompt, apiKey) {
     if (response.status === 400) {
       const errorMsg = errorData.error?.message || errorText;
       if (errorMsg.includes('API_KEY_INVALID') || errorMsg.includes('invalid')) {
-        throw new Error('Gemini API anahtarınız geçersiz. Google AI Studio\'dan (aistudio.google.com/api-keys) yeni anahtar oluşturun.');
+        throw new Error(getErrorMessage('gemini_invalid_key'));
       } else if (errorMsg.includes('SAFETY')) {
-        throw new Error('İçerik güvenlik filtresi tarafından engellendi. Farklı bir metin deneyin.');
+        throw new Error(getErrorMessage('gemini_safety_filter'));
       } else if (errorMsg.includes('model')) {
-        throw new Error('Seçilen Gemini modeli kullanılamıyor. Farklı bir model deneyin.');
+        throw new Error(getErrorMessage('gemini_model_unavailable'));
       }
-      throw new Error('Geçersiz istek. Lütfen metin formatını kontrol edin.');
+      throw new Error(getErrorMessage('invalid_request_length'));
     } else if (response.status === 403) {
-      throw new Error('Gemini API erişim izniniz yok. Google AI Studio\'da API\'yi etkinleştirin ve faturalandırmayı aktif edin.');
+      throw new Error(getErrorMessage('gemini_access_forbidden'));
     } else if (response.status === 429) {
-      throw new Error('Gemini rate limit aşıldı. Ücretsiz planda dakikada 15 istek limiti var. 1 dakika bekleyip tekrar deneyin.');
+      throw new Error(getErrorMessage('gemini_rate_limit'));
     } else if (response.status === 500 || response.status === 502 || response.status === 503) {
-      throw new Error('Gemini servisleri şu anda çalışmıyor. 5-10 dakika sonra tekrar deneyin.');
+      throw new Error(getErrorMessage('gemini_service_down'));
     } else if (response.status === 504) {
-      throw new Error('Gemini yanıt vermedi (timeout). Lütfen tekrar deneyin.');
+      throw new Error(getErrorMessage('gemini_timeout'));
     }
     
-    throw new Error(`Gemini API hatası (${response.status}): ${errorText.substring(0, 100)}`);
+    throw new Error(`Gemini API (${response.status}): ${errorText.substring(0, 100)}`);
   }
 
   const data = await response.json();
@@ -1295,7 +1309,7 @@ async function callGeminiBasic(prompt, apiKey) {
     }
   }
 
-  throw new Error('Gemini API geçersiz yanıt formatı');
+  throw new Error(getErrorMessage('gemini_invalid_response'));
 }
 
 /**
@@ -1328,18 +1342,18 @@ async function callCohere(prompt, apiKey) {
       
       // Detaylı hata mesajları
       if (response.status === 429) {
-        throw new Error('Cohere rate limit aşıldı. Trial hesaplarda dakikada 5 istek limiti var. 1 dakika bekleyip tekrar deneyin.');
+        throw new Error(getErrorMessage('cohere_rate_limit'));
       } else if (response.status === 401) {
-        throw new Error('Cohere API anahtarınız geçersiz. Cohere Dashboard\'dan yeni anahtar oluşturun.');
+        throw new Error(getErrorMessage('cohere_invalid_key'));
       } else if (response.status === 403) {
-        throw new Error('Cohere API erişim izniniz yok. API anahtarınızın aktif olduğundan emin olun.');
+        throw new Error(getErrorMessage('cohere_access_forbidden'));
       } else if (response.status === 400) {
-        throw new Error('Geçersiz istek. Lütfen metin uzunluğunu kontrol edin.');
+        throw new Error(getErrorMessage('invalid_request_length'));
       } else if (response.status === 500 || response.status === 502 || response.status === 503) {
-        throw new Error('Cohere servisleri şu anda çalışmıyor. 5-10 dakika sonra tekrar deneyin.');
+        throw new Error(getErrorMessage('cohere_service_down'));
       }
       
-      throw new Error(errorData.message || `Cohere API hatası (${response.status})`);
+      throw new Error(errorData.message || `Cohere API (${response.status})`);
     }
 
     const data = await response.json();
@@ -1351,10 +1365,10 @@ async function callCohere(prompt, apiKey) {
     if (data.generations && data.generations[0]) {
       return data.generations[0].text.trim();
     }
-    throw new Error('Cohere API geçersiz yanıt formatı');
+    throw new Error(getErrorMessage('cohere_invalid_response'));
   } catch (error) {
     //console.error('Cohere API hatası:', error);
-    throw new Error(`Cohere çağrısı başarısız: ${error.message}`);
+    throw error; // Zaten yerelleştirilmiş hata mesajını koru
   }
 }
 
@@ -1397,21 +1411,21 @@ async function callCustomAPI(prompt, apiKey, endpoint, model = '') {
       
       // Detaylı hata mesajları
       if (response.status === 429) {
-        throw new Error('Özel API rate limit aşıldı. Lütfen birkaç dakika bekleyip tekrar deneyin.');
+        throw new Error(getErrorMessage('custom_rate_limit'));
       } else if (response.status === 401) {
-        throw new Error('Özel API anahtarınız geçersiz. Lütfen ayarlardan kontrol edin.');
+        throw new Error(getErrorMessage('custom_invalid_key'));
       } else if (response.status === 403) {
-        throw new Error('Özel API erişim izniniz yok. API anahtarınızı ve endpoint\'inizi kontrol edin.');
+        throw new Error(getErrorMessage('custom_access_forbidden'));
       } else if (response.status === 400) {
-        throw new Error('Geçersiz istek. API endpoint formatını ve model adını kontrol edin.');
+        throw new Error(getErrorMessage('custom_invalid_request'));
       } else if (response.status === 404) {
-        throw new Error('API endpoint bulunamadı. Lütfen endpoint URL\'ini kontrol edin.');
+        throw new Error(getErrorMessage('custom_endpoint_not_found'));
       } else if (response.status === 500 || response.status === 502 || response.status === 503) {
-        throw new Error('Özel API servisi şu anda çalışmıyor. Lütfen daha sonra tekrar deneyin.');
+        throw new Error(getErrorMessage('custom_service_unavailable'));
       }
       
       const errorMsg = errorData.error?.message || errorData.message || errorText.substring(0, 100);
-      throw new Error(`Özel API hatası (${response.status}): ${errorMsg}`);
+      throw new Error(`Custom API (${response.status}): ${errorMsg}`);
     }
 
     const data = await response.json();
@@ -1429,7 +1443,7 @@ async function callCustomAPI(prompt, apiKey, endpoint, model = '') {
     }
   } catch (error) {
     //console.error('Özel API hatası:', error);
-    throw new Error(`Özel API çağrısı başarısız: ${error.message}`);
+    throw error; // Zaten yerelleştirilmiş hata mesajını koru
   }
 }
 
@@ -1792,7 +1806,9 @@ chrome.runtime.onInstalled.addListener(async (details) => {
       // Tarayıcı dilini al
       const browserLocale = chrome.i18n.getUILanguage().split('-')[0]; // 'en-US' -> 'en'
       const supportedLocales = getSupportedLocales();
-      const defaultLocale = supportedLocales.includes(browserLocale) ? browserLocale : 'tr';
+      // Desteklenen diller: tr, en, es, de, fr
+      // Tarayıcı dili desteklenmiyorsa İngilizce varsayılan
+      const defaultLocale = supportedLocales.includes(browserLocale) ? browserLocale : 'en';
       
       // Varsayılan dil tercihlerini oluştur
       await chrome.storage.local.set({
@@ -1815,7 +1831,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
                           defaultLocale === 'en' ? 'English' :
                           defaultLocale === 'es' ? 'Español' :
                           defaultLocale === 'de' ? 'Deutsch' :
-                          defaultLocale === 'fr' ? 'Français' : 'Türkçe',
+                          defaultLocale === 'fr' ? 'Français' : 'English',
           defaultMainAction: 'improve',
           defaultProcessingStyle: 'faithful'
         });
@@ -1836,7 +1852,9 @@ chrome.runtime.onInstalled.addListener(async (details) => {
         if (!result.language_preferences) {
           const browserLocale = chrome.i18n.getUILanguage().split('-')[0];
           const supportedLocales = getSupportedLocales();
-          const defaultLocale = supportedLocales.includes(browserLocale) ? browserLocale : 'tr';
+          // Desteklenen diller: tr, en, es, de, fr
+          // Tarayıcı dili desteklenmiyorsa İngilizce varsayılan
+          const defaultLocale = supportedLocales.includes(browserLocale) ? browserLocale : 'en';
           
           await chrome.storage.local.set({
             language_preferences: {
