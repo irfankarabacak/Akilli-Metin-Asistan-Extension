@@ -105,12 +105,12 @@ We may update this policy occasionally. Changes will be reflected in the "Last U
 ## Open Source
 
 This Extension is open source. You can review the code at:
-[GitHub Repository](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension)
+[GitHub Repository](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion)
 
 ## Contact
 
 Questions about privacy? Contact us:
-- GitHub Issues: [Report Issue](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension/issues)
+- GitHub Issues: [Report Issue](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion/issues)
 - GitHub: [@irfankarabacak](https://github.com/irfankarabacak)
 
 ## Compliance

@@ -11,7 +11,7 @@ Thank you for your interest in contributing! This document provides guidelines f
 
 ### Development Setup
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension.git`
+2. Clone your fork: `git clone https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion.git`
 3. Load the extension in Chrome:
    - Navigate to `chrome://extensions/`
    - Enable "Developer mode"

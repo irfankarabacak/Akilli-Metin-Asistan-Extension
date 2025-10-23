@@ -3,8 +3,8 @@
 > AI-powered Chrome extension to enhance, convert, and summarize selected text with multi-language support
 
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chrome.google.com/webstore)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension)
-[![Version](https://img.shields.io/badge/Version-2.0.0-success?style=for-the-badge)](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion)
+[![Version](https://img.shields.io/badge/Version-2.0.0-success?style=for-the-badge)](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 ---
@@ -56,7 +56,7 @@
 #### Manual Installation
 ```bash
 # Clone the repository
-git clone https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension.git
+git clone https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion.git
 
 # Navigate to chrome://extensions/
 # Enable "Developer mode"
@@ -171,8 +171,8 @@ smart-text-assistant/
 ### Building from Source
 ```bash
 # Clone repository
-git clone https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension.git
-cd Akilli-Metin-Asistan-Extension
+git clone https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion.git
+cd Smart-Text-Assistant-Extansion
 
 # No build step required - pure JavaScript!
 # Load directly in Chrome as unpacked extension
@@ -185,9 +185,9 @@ cd Akilli-Metin-Asistan-Extension
 Contributions are welcome! Here's how you can help:
 
 ### Reporting Issues
-- 🐛 [Report a bug](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension/issues)
-- 💡 [Request a feature](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension/issues)
-- 📖 [Improve documentation](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension/issues)
+- 🐛 [Report a bug](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion/issues)
+- 💡 [Request a feature](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion/issues)
+- 📖 [Improve documentation](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion/issues)
 
 ### Pull Requests
 1. Fork the repository
@@ -226,7 +226,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Developer:** İrfan Karabacak
 
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github)](https://github.com/irfankarabacak)
-[![Issues](https://img.shields.io/badge/Issues-Report-EA4335?style=for-the-badge&logo=github&logoColor=white)](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension/issues)
+[![Issues](https://img.shields.io/badge/Issues-Report-EA4335?style=for-the-badge&logo=github&logoColor=white)](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion/issues)
 
 ---
 
@@ -234,8 +234,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### ⭐ Star this project if you find it useful!
 
-[![GitHub stars](https://img.shields.io/github/stars/irfankarabacak/Akilli-Metin-Asistan-Extension?style=social)](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension)
-[![GitHub forks](https://img.shields.io/github/forks/irfankarabacak/Akilli-Metin-Asistan-Extension?style=social)](https://github.com/irfankarabacak/Akilli-Metin-Asistan-Extension/fork)
+[![GitHub stars](https://img.shields.io/github/stars/irfankarabacak/Smart-Text-Assistant-Extansion?style=social)](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion)
+[![GitHub forks](https://img.shields.io/github/forks/irfankarabacak/Smart-Text-Assistant-Extansion?style=social)](https://github.com/irfankarabacak/Smart-Text-Assistant-Extansion/fork)
 
 **Made with ❤️ and ☕**
 
