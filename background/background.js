@@ -955,7 +955,7 @@ async function callOpenAI(prompt, apiKey) {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model: 'gpt-4o-mini', // OpenAI's latest affordable model
         messages: [
           { role: 'user', content: prompt }
         ],
@@ -1304,7 +1304,7 @@ async function callGeminiBasic(prompt, apiKey) {
 async function callCohere(prompt, apiKey) {
   try {
     
-    const response = await fetch('https://api.cohere.ai/v1/generate', {
+    const response = await fetch('https://api.cohere.com/v1/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1312,7 +1312,7 @@ async function callCohere(prompt, apiKey) {
       },
       body: JSON.stringify({
         model: 'command',
-        prompt: prompt,
+        message: prompt,
         max_tokens: 1000,
         temperature: 0.7
       })
@@ -1343,7 +1343,15 @@ async function callCohere(prompt, apiKey) {
     }
 
     const data = await response.json();
-    return data.generations[0].text.trim();
+    // Cohere v1/chat endpoint returns 'text' field directly
+    if (data.text) {
+      return data.text.trim();
+    }
+    // Fallback for older format
+    if (data.generations && data.generations[0]) {
+      return data.generations[0].text.trim();
+    }
+    throw new Error('Cohere API geçersiz yanıt formatı');
   } catch (error) {
     //console.error('Cohere API hatası:', error);
     throw new Error(`Cohere çağrısı başarısız: ${error.message}`);
